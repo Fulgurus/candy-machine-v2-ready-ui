@@ -203,11 +203,9 @@ const Price = styled(Chip)`
 `;
 
 const Image = styled.img`
-  height: 400px;
+  height: 430px;
   width: auto;
-  border-radius: 7px;
-  box-shadow: 5px 5px 40px 5px rgba(0,0,0,0.5);
-`;
+  `;
 
 const BorderLinearProgress = styled(LinearProgress)`
   margin: 20px 0;
@@ -483,37 +481,32 @@ const Home = (props: HomeProps) => {
         <main>
             <MainContainer>
                 <WalletContainer>
-                    <Logo><a href="http://localhost:3000/" target="_blank" rel="noopener noreferrer"><img alt=""
-                                                                                                          src="logo.png"/></a></Logo>
+                    <Logo><a href="" target="_blank" rel="noopener noreferrer"><img alt="" width="219"src="https://proleague.gg/wp-content/uploads/2020/11/logo.svg"/></a></Logo>
                     <Menu>
-                        <li><a href="http://localhost:3000/" target="_blank" rel="noopener noreferrer">Menu 1</a>
-                        </li>
-                        <li><a href="http://localhost:3000/" target="_blank"
-                               rel="noopener noreferrer">Menu 2</a></li>
-                        <li><a href="http://localhost:3000/" target="_blank"
-                               rel="noopener noreferrer">Menu 3</a></li>
+
                     </Menu>
-                    <Wallet>
-                        {wallet ?
-                            <WalletAmount>{(balance || 0).toLocaleString()} SOL<ConnectButton/></WalletAmount> :
-                            <ConnectButton>Connect Wallet</ConnectButton>}
-                    </Wallet>
+                    <LogoAligner><img src="alpha.svg" alt=""></img><p>ALPHA + NFT</p></LogoAligner>
                 </WalletContainer>
-                <ShimmerTitle>MINT IS LIVE !</ShimmerTitle>
                 <br/>
 
 
                 <MintContainer>
                     <DesContainer>
                         <NFT elevation={3}>
-                            <h2>My NFT</h2>
+                            <div><Image
+                                src="nft.png"
+                                alt="ProLeague Founder&#39;s Edition Mint"/></div>
                             <br/>
-                            <div><Price
-                                label={isActive && whitelistEnabled && (whitelistTokenBalance > 0) ? (whitelistPrice + " " + priceLabel) : (price + " " + priceLabel)}/><Image
-                                src="cool-cats.gif"
-                                alt="NFT To Mint"/></div>
-                            <br/>
-                            {wallet && isActive && whitelistEnabled && (whitelistTokenBalance > 0) &&
+                        </NFT>
+                    </DesContainer>
+                    <DesContainer>
+                        <Des elevation={2}>
+                            <p>MINT</p>
+                            <GoldTitle>Proleague Founder&#39;s NFT</GoldTitle>
+                            <p>Proleague.gg is fostering the growth of the next generation of esport professionals by offering an engaging platform that uses blockchain, NFTs, and our own unique cryptocurrency to reward and incentivize competitive play.</p>
+                            <p></p>
+                            <p>COST: 1 SOL</p>
+                                {wallet && isActive && whitelistEnabled && (whitelistTokenBalance > 0) &&
                               <h3>You have {whitelistTokenBalance} whitelist mint(s) remaining.</h3>}
                             {wallet && isActive &&
                                 /* <p>Total Minted : {100 - (itemsRemaining * 100 / itemsAvailable)}%</p>}*/
@@ -576,35 +569,12 @@ const Home = (props: HomeProps) => {
                             {wallet && isActive && solanaExplorerLink &&
                               <SolExplorerLink href={solanaExplorerLink} target="_blank">View on Solana
                                 Explorer</SolExplorerLink>}
-                        </NFT>
-                    </DesContainer>
-                    <DesContainer>
-                        <Des elevation={2}>
-                            <LogoAligner><img src="logo.png" alt=""></img><GoldTitle>TITLE 1</GoldTitle></LogoAligner>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt.</p>
+
                         </Des>
                         <Des elevation={2}>
-                            <LogoAligner><img src="logo.png" alt=""></img><GoldTitle>TITLE 2</GoldTitle></LogoAligner>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt.</p>
-                        </Des>
-                        <Des elevation={2}>
-                            <LogoAligner><img src="logo.png" alt=""></img><GoldTitle>TITLE 3</GoldTitle></LogoAligner>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt.</p>
+                            <p></p>
+                            <p></p>
+                            <p></p>
                         </Des>
                     </DesContainer>
                 </MintContainer>
