@@ -13,9 +13,10 @@ body{
   font-size: 1em;
 }
 
-h2, p{
+h2{
   color: var(--main-text-color);
   font-size:3em;
+  font-weight: 700;
 }
 
 h3{
@@ -26,6 +27,7 @@ p{
   color: var(--main-text-color);
   font-size:0.875em;
   font-weight: 400;
+  line-height: 1.8em;
 }
 
 

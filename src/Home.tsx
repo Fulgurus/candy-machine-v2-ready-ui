@@ -63,10 +63,11 @@ const Wallet = styled.ul`
 `;
 
 const ConnectButton = styled(WalletMultiButton)`
-  border-radius: 18px !important;
+  border-radius: 5px !important;
   padding: 6px 16px;
-  background-color: #4E44CE;
+  background-color: #E0FF1A;
   margin: 0 auto;
+  color: #070706;
 `;
 
 const NFT = styled(Paper)`
@@ -85,7 +86,7 @@ const Card = styled(Paper)`
   display: inline-block;
   background-color: var(--card-background-lighter-color) !important;
   margin: 5px;
-  padding: 24px;
+  padding: 5px;
 `;
 
 const MintButtonContainer = styled.div`
@@ -485,7 +486,11 @@ const Home = (props: HomeProps) => {
                     <Menu>
 
                     </Menu>
-                    <LogoAligner><img src="alpha.svg" alt=""></img><p>ALPHA + NFT</p></LogoAligner>
+                    <Wallet>
+                        {wallet ?
+                            <WalletAmount>{(balance || 0).toLocaleString()} SOL<ConnectButton/></WalletAmount> :
+                            <ConnectButton>Connect Wallet</ConnectButton>}
+                    </Wallet>
                 </WalletContainer>
                 <br/>
 
@@ -496,16 +501,16 @@ const Home = (props: HomeProps) => {
                             <div><Image
                                 src="nft.png"
                                 alt="ProLeague Founder&#39;s Edition Mint"/></div>
-                            <br/>
                         </NFT>
                     </DesContainer>
                     <DesContainer>
-                        <Des elevation={2}>
+                        <Des elevation={3}>
                             <p>MINT</p>
-                            <GoldTitle>Proleague Founder&#39;s NFT</GoldTitle>
+                            <GoldTitle>PROLEAGUE<br/> FOUNDER&#39;S NFT</GoldTitle>
                             <p>Proleague.gg is fostering the growth of the next generation of esport professionals by offering an engaging platform that uses blockchain, NFTs, and our own unique cryptocurrency to reward and incentivize competitive play.</p>
                             <p></p>
-                            <p>COST: 1 SOL</p>
+                            <LogoAligner><p>COST:&nbsp;&nbsp;&nbsp;&nbsp;<img src="solana-sol-logo.svg" alt=""></img>1 SOL</p></LogoAligner> 
+                            <br/>
                                 {wallet && isActive && whitelistEnabled && (whitelistTokenBalance > 0) &&
                               <h3>You have {whitelistTokenBalance} whitelist mint(s) remaining.</h3>}
                             {wallet && isActive &&
@@ -570,11 +575,6 @@ const Home = (props: HomeProps) => {
                               <SolExplorerLink href={solanaExplorerLink} target="_blank">View on Solana
                                 Explorer</SolExplorerLink>}
 
-                        </Des>
-                        <Des elevation={2}>
-                            <p></p>
-                            <p></p>
-                            <p></p>
                         </Des>
                     </DesContainer>
                 </MintContainer>
