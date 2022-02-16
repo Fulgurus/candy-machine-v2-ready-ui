@@ -482,7 +482,7 @@ const Home = (props: HomeProps) => {
         <main>
             <MainContainer>
                 <WalletContainer>
-                    <Logo><a href="" target="_blank" rel="noopener noreferrer"><img alt="" width="219"src="https://proleague.gg/wp-content/uploads/2020/11/logo.svg"/></a></Logo>
+                    <Logo><img alt="" width="219"src="https://proleague.gg/wp-content/uploads/2020/11/logo.svg"/></Logo>
                     <Menu>
 
                     </Menu>
@@ -493,7 +493,6 @@ const Home = (props: HomeProps) => {
                     </Wallet>
                 </WalletContainer>
                 <br/>
-
 
                 <MintContainer>
                     <DesContainer>
@@ -574,7 +573,6 @@ const Home = (props: HomeProps) => {
                             {wallet && isActive && solanaExplorerLink &&
                               <SolExplorerLink href={solanaExplorerLink} target="_blank">View on Solana
                                 Explorer</SolExplorerLink>}
-
                         </Des>
                     </DesContainer>
                 </MintContainer>
