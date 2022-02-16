@@ -493,11 +493,13 @@ const Home = (props: HomeProps) => {
                     </Wallet>
                 </WalletContainer>
                 <br/>
+                <ShimmerTitle></ShimmerTitle>
 
                 <MintContainer>
                     <DesContainer>
                         <NFT elevation={3}>
-                            <div><Image
+                            <div><Price
+                                label={isActive && whitelistEnabled && (whitelistTokenBalance > 0) ? (whitelistPrice + " " + priceLabel) : (price + " " + priceLabel)}/><Image
                                 src="nft.png"
                                 alt="ProLeague Founder&#39;s Edition Mint"/></div>
                         </NFT>
