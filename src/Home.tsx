@@ -202,10 +202,11 @@ const Price = styled(Chip)`
   margin: 5px;
   font-weight: bold;
   font-size: 1em !important;
+  visibility: hidden;
 `;
 
 const Image = styled.img`
-  height: 430px;
+  height: 520px;
   width: auto;
   `;
 
@@ -361,7 +362,7 @@ const Home = (props: HomeProps) => {
 
     const renderCounter = ({days, hours, minutes, seconds}: any) => {
         return (
-            <div><Card elevation={1}><h1>{days}</h1><br/>Days</Card><Card elevation={1}><h1>{hours}</h1>
+            <div style={{ height: 100 }}> <Card elevation={1}><h1>{days}</h1><br/>Days</Card><Card elevation={1}><h1>{hours}</h1>
                 <br/>Hours</Card><Card elevation={1}><h1>{minutes}</h1><br/>Mins</Card><Card elevation={1}>
                 <h1>{seconds}</h1><br/>Secs</Card></div>
         );
@@ -512,7 +513,6 @@ const Home = (props: HomeProps) => {
                             <p>Proleague.gg is fostering the growth of the next generation of esport professionals by offering an engaging platform that uses blockchain, NFTs, and our own unique cryptocurrency to reward and incentivize competitive play.</p>
                             <p></p>
                             <LogoAligner><p>COST:&nbsp;&nbsp;&nbsp;&nbsp;<img src="solana-sol-logo.svg" alt=""></img>1 SOL</p></LogoAligner> 
-                            <br/>
                                 {wallet && isActive && whitelistEnabled && (whitelistTokenBalance > 0) &&
                               <h3>You have {whitelistTokenBalance} whitelist mint(s) remaining.</h3>}
                             {wallet && isActive &&
@@ -579,6 +579,8 @@ const Home = (props: HomeProps) => {
                         </Des>
                     </DesContainer>
                 </MintContainer>
+                <br/>
+                <br/>
             </MainContainer>
             <Snackbar
                 open={alertState.open}

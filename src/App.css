@@ -2,7 +2,7 @@
 :root {
   --main-background-color: #000000;
   --card-background-color: #000000;
-  --card-background-lighter-color: #7A7F92;
+  --card-background-lighter-color: #000000;
   --main-text-color:#ffffff;
   --title-text-color:#E1FF00;
 }
@@ -28,6 +28,7 @@ p{
   font-size:0.875em;
   font-weight: 400;
   line-height: 1.8em;
+  max-width: 500px;
 }
 
 
