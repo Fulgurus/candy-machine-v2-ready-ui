@@ -80,6 +80,7 @@ const NFT = styled(Paper)`
 const Des = styled(NFT)`
   text-align: left;
   padding-top: 0px;
+  max-width: 500px;
 `;
 
 const Card = styled(Paper)`
