@@ -383,8 +383,8 @@ const Home = (props: HomeProps) => {
             setBalance(balance - (whitelistEnabled ? whitelistPrice : price) - solFeesEstimation);
         }
         setSolanaExplorerLink(cluster === "devnet" || cluster === "testnet"
-            ? ("https://explorer.solana.com/address/" + mintPublicKey + "?cluster=" + cluster)
-            : ("https://explorer.solana.com/address/" + mintPublicKey));
+            ? ("https://solscan.io/token/" + mintPublicKey + "?cluster=" + cluster)
+            : ("https://solscan.io/token/" + mintPublicKey));
         throwConfetti();
     };
 
@@ -493,10 +493,8 @@ const Home = (props: HomeProps) => {
                             <WalletAmount>{(balance || 0).toLocaleString()} SOL<ConnectButton/></WalletAmount> :
                             <ConnectButton>Connect Wallet</ConnectButton>}
                     </Wallet>
-                </WalletContainer>
-                <br/>
+                </WalletContainer>                
                 <ShimmerTitle></ShimmerTitle>
-
                 <MintContainer>
                     <DesContainer>
                         <NFT elevation={3}>
@@ -574,8 +572,8 @@ const Home = (props: HomeProps) => {
                             </MintButtonContainer>
                             <br/>
                             {wallet && isActive && solanaExplorerLink &&
-                              <SolExplorerLink href={solanaExplorerLink} target="_blank">View on Solana
-                                Explorer</SolExplorerLink>}
+                              <SolExplorerLink href={solanaExplorerLink} target="_blank">View on Solscan
+                              </SolExplorerLink>}
                         </Des>
                     </DesContainer>
                 </MintContainer>
