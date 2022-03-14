@@ -1,15 +1,20 @@
 import styled from 'styled-components';
 import {useEffect, useState} from 'react';
 import Button from '@material-ui/core/Button';
-import {CircularProgress} from '@material-ui/core';
+import {CircularProgress, Paper} from '@material-ui/core';
 import {GatewayStatus, useGateway} from '@civic/solana-gateway-react';
 import {CandyMachine} from './candy-machine';
 
 
+const Image = styled.img`
+  height: 100px;
+  width: 250px;
+`;
+
 export const CTAButton = styled(Button)`
   display: block !important;
   margin: 0 auto !important;
-  background-color: var(--title-text-color) !important;
+  background-color: #946cee !important;
   min-width: 120px !important;
   font-size: 1em !important;
 `;
@@ -18,14 +23,12 @@ export const MintButton = ({
                                onMint,
                                candyMachine,
                                isMinting,
-                               isEnded,
                                isActive,
                                isSoldOut
                            }: {
     onMint: () => Promise<void>;
     candyMachine: CandyMachine | undefined;
     isMinting: boolean;
-    isEnded: boolean;
     isActive: boolean;
     isSoldOut: boolean;
 }) => {
@@ -48,11 +51,8 @@ export const MintButton = ({
     return (
         <CTAButton
             disabled={
-                clicked ||
-                candyMachine?.state.isSoldOut ||
-                isSoldOut ||
+                candyMachine?.state.isSoldOut || isSoldOut ||
                 isMinting ||
-                isEnded ||
                 !isActive ||
                 isVerifying
             }
@@ -69,17 +69,17 @@ export const MintButton = ({
             variant="contained"
         >
             {!candyMachine ? (
-                "CONNECTING..."
+                <Image src="connect.gif"/> // 지갑 connect후 버튼들
             ) : candyMachine?.state.isSoldOut || isSoldOut ? (
-                'SOLD OUT'
+                <Image src = "soldout.jpg" />
             ) : isActive ? (
                 isVerifying ? 'VERIFYING...' :
-                    isMinting || clicked ? (
+                    isMinting ? (
                         <CircularProgress/>
                     ) : (
                         "MINT"
                     )
-            ) : isEnded ? "ENDED" : (candyMachine?.state.goLiveDate ? (
+            ) : (candyMachine?.state.goLiveDate ? (
                 "SOON"
             ) : (
                 "UNAVAILABLE"

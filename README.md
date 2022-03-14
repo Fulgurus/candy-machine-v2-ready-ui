@@ -1,17 +1,9 @@
 # Introduction
 
-**Prod-ready Responsive UI** which can be easily customized in 5mn.
+The **Candy-Machine-V2-Responsive-UI** project is a fork of the famous [Candy-Machine-Mint](https://github.com/exiled-apes/candy-machine-mint) upgraded to support the recent **Candy Machine V2** new functionalities : (pre-sale, spl-token to mint, etc...)
+But that's not all, I share with you a **Prod-ready Responsive UI** which can be easily customized in 5mn.
 
-All Candy Machine V2 functionalities are implemented, auto detected and maintained up-to-date :
-
-- public mint (with countdown when date in future)
-- civic support (gatekeeper)
-- whitelist
-- presale true / false
-- end date / end number (endSettings)
-- spl-token to mint
-
-![Candy Machine Preview Image](https://i.ibb.co/h7L0M3G/repo-bg.png)
+![Candy Machine Preview Image](https://i.imgur.com/WWSvkBO.png)
 
 ### Supported Wallets
 
@@ -25,7 +17,7 @@ One-click solution to clone this project to your GitHub and deploy the prod pack
 Your only task will be to customize your GitHub fork of this project and commit updates.
 Vercel will automatically deploy new prod packages for each new commit.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FFulgurus%2Fcandy-machine-v2-responsive-ui&env=REACT_APP_CANDY_MACHINE_ID,REACT_APP_SOLANA_NETWORK,REACT_APP_SOLANA_RPC_HOST&envDescription=Populate%20REACT_APP_CANDY_MACHINE_ID%20with%20your%20candy%20machine%20public%20key%2C%20REACT_APP_SOLANA_NETWORK%20with%20the%20solana%20network%20(devnet%2Fmainnet-beta)%20and%20REACT_APP_SOLANA_RPC_HOST%20with%20the%20RPC%20URL%20(example%20for%20devnet%20%3A%20https%3A%2F%2Fapi.devnet.solana.com)&envLink=https%3A%2F%2Fdocs.solana.com%2Fcluster%2Frpc-endpoints%23mainnet-beta&demo-title=My%20Demo%20Mint%20Page&demo-description=A%20one-click%20generated%20solana%20minting%20responsive%20website.&demo-url=https%3A%2F%2Fwww.mintgatsbyclub.net%2F&demo-image=https%3A%2F%2Fi.ibb.co%2Fh7L0M3G%2Frepo-bg.png)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FFulgurus%2Fcandy-machine-v2-responsive-ui&env=REACT_APP_CANDY_MACHINE_ID,REACT_APP_SOLANA_NETWORK,REACT_APP_SOLANA_RPC_HOST&envDescription=Populate%20REACT_APP_CANDY_MACHINE_ID%20with%20your%20candy%20machine%20public%20key%2C%20REACT_APP_SOLANA_NETWORK%20with%20the%20solana%20network%20(devnet%2Fmainnet-beta)%20and%20REACT_APP_SOLANA_RPC_HOST%20with%20the%20RPC%20URL%20(example%20for%20devnet%20%3A%20https%3A%2F%2Fapi.devnet.solana.com)&envLink=https%3A%2F%2Fdocs.solana.com%2Fcluster%2Frpc-endpoints%23mainnet-beta&demo-title=My%20Demo%20Mint%20Page&demo-description=A%20one-click%20generated%20solana%20minting%20responsive%20website.&demo-url=https%3A%2F%2Fwww.mintgatsbyclub.net%2F&demo-image=https%3A%2F%2Fi.imgur.com%2FWWSvkBO.png)
 
 ## Getting Set Up
 
@@ -116,14 +108,12 @@ yarn build
 ```
 :root {
   --main-background-color: #343A50;
-  --card-background-color: #804980;
-  --countdown-background-color: #433765;
+  --card-background-color: #51576D;
+  --card-background-lighter-color: #7A7F92;
   --main-text-color:#F7F6F4;
   --title-text-color:#3CBA8B;
 }
 ```
-
-Next to that, make sure to update background image by overwriting your own background PNG file in src/img folder.
 
 ##### 4.2 `public` folder :
 
@@ -135,7 +125,6 @@ Next to that, make sure to update background image by overwriting your own backg
 Scroll down down to line 380 (`return <main> [...]`) and start to update all titles/menu/text/images/text... as wished in the whole React HTML block.
 
 That's it ! Enjoy your beautiful candy machine :)
-
 
 ##  Available Commands Recap :
 

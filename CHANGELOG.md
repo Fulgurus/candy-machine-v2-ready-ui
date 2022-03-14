@@ -1,17 +1,3 @@
-**11 Mar 2022**
-
-More user-friendly UI.
-
-Fixed presale false :
-- countdown enabled for WL when presale false
-- if discountPrice is null, then mint becomes private to WL.
-
-**03 Mar 2022**
-
-endSettings now properly managed on front end :
-- remaining time to mint when using end date settings
-- total available updated when using end mint number settings
-
 **17 Feb 2022**
 
 Code cleanup, minor fixes, and added CI=false .env variable to avoid harmless compilation warnings generating build errors on user code customization.

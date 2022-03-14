@@ -45,10 +45,7 @@ interface CandyMachineState {
     expireOnUse: boolean;
     gatekeeperNetwork: anchor.web3.PublicKey;
   };
-  endSettings: null | {
-    number: anchor.BN;
-    endSettingType: any;
-  };
+  endSettings: null | [number, anchor.BN];
   whitelistMintSettings: null | {
     mode: any;
     mint: anchor.web3.PublicKey;
@@ -456,6 +453,7 @@ export const mintOneToken = async (
 
   return [];
 };
+
 
 export const shortenAddress = (address: string, chars = 4): string => {
   return `${address.slice(0, chars)}...${address.slice(-chars)}`;
