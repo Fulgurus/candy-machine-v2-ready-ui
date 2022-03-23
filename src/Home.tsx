@@ -98,20 +98,17 @@ const MintButtonContainer = styled.div`
   button.MuiButton-contained:not(.MuiButton-containedPrimary).Mui-disabled {
     color: #464646;
   }
-
   button.MuiButton-contained:not(.MuiButton-containedPrimary):hover,
   button.MuiButton-contained:not(.MuiButton-containedPrimary):focus {
     -webkit-animation: pulse 1s;
     animation: pulse 1s;
     box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
   }
-
   @-webkit-keyframes pulse {
     0% {
       box-shadow: 0 0 0 0 #ef8f6e;
     }
   }
-
   @keyframes pulse {
     0% {
       box-shadow: 0 0 0 0 #ef8f6e;
@@ -121,7 +118,6 @@ const MintButtonContainer = styled.div`
 
 const Logo = styled.div`
   flex: 0 0 auto;
-
   img {
     height: 60px;
   }
@@ -130,10 +126,8 @@ const Menu = styled.ul`
   list-style: none;
   display: inline-flex;
   flex: 1 0 auto;
-
   li {
     margin: 0 12px;
-
     a {
       color: var(--main-text-color);
       list-style-image: none;
@@ -145,17 +139,14 @@ const Menu = styled.ul`
       touch-action: manipulation;
       transition: color 0.3s;
       padding-bottom: 15px;
-
       img {
         max-height: 26px;
       }
     }
-
     a:hover, a:active {
       color: rgb(131, 146, 161);
       border-bottom: 4px solid var(--title-text-color);
     }
-
   }
 `;
 
@@ -169,7 +160,6 @@ const SolExplorerLink = styled.a`
   outline: none;
   text-decoration: none;
   text-size-adjust: 100%;
-
   :hover {
     border-bottom: 2px solid var(--title-text-color);
   }
@@ -227,7 +217,6 @@ const BorderLinearProgress = styled(LinearProgress)`
   > div.MuiLinearProgress-barColorPrimary{
     background-color:var(--title-text-color) !important;
   }
-
   > div.MuiLinearProgress-bar1Determinate {
     border-radius: 30px !important;
     background-image: linear-gradient(270deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.5));
@@ -256,7 +245,6 @@ const GoldTitle = styled.h2`
 const LogoAligner = styled.div`
   display: flex;
   align-items: center;
-
   img {
     max-height: 35px;
     margin-right: 10px;
@@ -549,16 +537,7 @@ const Home = (props: HomeProps) => {
         <main>
             <MainContainer>
                 <WalletContainer>
-                    <Logo><a href="http://localhost:3000/" target="_blank" rel="noopener noreferrer"><img alt=""
-                                                                                                          src="logo.png"/></a></Logo>
-                    <Menu>
-                        <li><a href="http://localhost:3000/" target="_blank" rel="noopener noreferrer">Menu 1</a>
-                        </li>
-                        <li><a href="http://localhost:3000/" target="_blank"
-                               rel="noopener noreferrer">Menu 2</a></li>
-                        <li><a href="http://localhost:3000/" target="_blank"
-                               rel="noopener noreferrer">Menu 3</a></li>
-                    </Menu>
+                    <Logo><a href="http://localhost:3000/" target="_blank" rel="noopener noreferrer"><img alt="" src="logo.png"/></a></Logo>
                     <Wallet>
                         {wallet ?
                             <WalletAmount>{(balance || 0).toLocaleString()} SOL<ConnectButton/></WalletAmount> :
