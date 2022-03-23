@@ -77,11 +77,6 @@ const NFT = styled(Paper)`
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22) !important;
 `;
 
-const Des = styled(NFT)`
-  text-align: left;
-  padding-top: 0px;
-`;
-
 
 const Card = styled(Paper)`
   display: inline-block;
@@ -240,15 +235,6 @@ const ShimmerTitle = styled.h1`
 
 const GoldTitle = styled.h2`
   color: var(--title-text-color);
-`;
-
-const LogoAligner = styled.div`
-  display: flex;
-  align-items: center;
-  img {
-    max-height: 35px;
-    margin-right: 10px;
-  }
 `;
 
 
