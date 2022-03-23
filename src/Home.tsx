@@ -233,10 +233,6 @@ const ShimmerTitle = styled.h1`
   }
 `;
 
-const GoldTitle = styled.h2`
-  color: var(--title-text-color);
-`;
-
 
 export interface HomeProps {
     candyMachineId: anchor.web3.PublicKey;
