@@ -564,7 +564,8 @@ const Home = (props: HomeProps) => {
                             <ConnectButton>Connect Wallet</ConnectButton>}
                     </Wallet>
                 </WalletContainer>
-                <ShimmerTitle>STARS WOMEN NFTs!</ShimmerTitle>
+                <ShimmerTitle>STARS WOMEN NFTs!</ShimmerTitle> 
+                {/* name */}
                 <br/>
                 <MintContainer>
                     <DesContainer>
