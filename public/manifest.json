@@ -1,11 +1,11 @@
 {
-  "short_name": "Mint Page",
-  "name": "Mint Page",
+  "short_name": "SW NFTS Mint",
+  "name": "Stars Women NFTs Mint",
   "icons": [
     {
       "src": "logo.png",
       "type": "image/png",
-      "sizes": "358x358"
+      "sizes": "1280x1280"
     }
   ],
   "start_url": ".",
