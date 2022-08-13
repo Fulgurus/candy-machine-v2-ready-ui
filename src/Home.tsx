@@ -28,6 +28,8 @@ import {
     mintOneToken,
     SetupState,
 } from "./candy-machine";
+import { Toaster } from 'react-hot-toast';
+
 
 const cluster = process.env.REACT_APP_SOLANA_NETWORK!.toString();
 const decimals = process.env.REACT_APP_SPL_TOKEN_TO_MINT_DECIMALS ? +process.env.REACT_APP_SPL_TOKEN_TO_MINT_DECIMALS!.toString() : 9;
@@ -37,27 +39,28 @@ const WalletContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: right;
+  justify-content: space-between;
 `;
 
 const WalletAmount = styled.div`
-  color: black;
+  color: white;
   width: auto;
   padding: 5px 5px 5px 16px;
+  position: relative;
   min-width: 48px;
   min-height: auto;
   border-radius: 22px;
-  background-color: var(--main-text-color);
   box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%);
   box-sizing: border-box;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   font-weight: 500;
   line-height: 1.75;
   text-transform: uppercase;
-  border: 0;
+  border: 1px;
+  border-color: #f07733;
   margin: 0;
   display: inline-flex;
-  outline: 0;
+  outline: 2px solid transparent;
   position: relative;
   align-items: center;
   user-select: none;
@@ -73,31 +76,105 @@ const Wallet = styled.ul`
 `;
 
 const ConnectButton = styled(WalletMultiButton)`
-  border-radius: 18px !important;
+  border-radius: 4px !important;
+  border: 2px
   padding: 6px 16px;
-  background-color: #4E44CE;
   margin: 0 auto;
+  color: white;
+  width: auto;
+  background-color: #0f1324 !important;
+  padding: 5px 16px 5px 16px;
+  position: relative;
+  min-width: 48px;
+  min-height: auto;
+  border-radius: 22px;
+  box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%);
+  box-sizing: border-box;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-weight: 500;
+  line-height: 1.75;
+  text-transform: uppercase;
+  border: 1px solid;
+  border-color: #34e2e4;
+  margin: 0;
+  display: inline-flex;
+  outline: 2px solid transparent;
+  position: relative;
+  align-items: center;
+  user-select: none;
+  vertical-align: middle;
+  justify-content: flex-start;
+  gap: 10px;
+`;
+
+
+const Mintphase = styled(Paper)`
+
+width: 100%;
+position: relative;
+margin: 0 auto;
+border: 1px solid #34e2e4;
+padding: 5px 5px 5px 5px;
+flex: 1 4 auto;
+background-color: #23273B !important;
+box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22) !important;
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="Mintphase"] {
+      width: 100%;
 `;
 
 const NFT = styled(Paper)`
-  min-width: 500px;
+  min-width: 60%;
   margin: 0 auto;
-  padding: 5px 20px 20px 20px;
+  padding: 20px 20px 20px 20px;
   flex: 1 1 auto;
-  background-color: var(--card-background-color) !important;
+  background-color: #23273B !important;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22) !important;
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="NFT"] {
+      width: 100%;
 `;
 
-const Card = styled(Paper)`
-  display: inline-block;
-  background-color: var(--countdown-background-color) !important;
-  margin: 5px;
-  min-width: 40px;
-  padding: 24px;
+const Preview = styled(Paper)`
+float: left;
+width: 40%;
+margin: 0 auto;
+padding: 5px;
+text-align: center;
+color: inherit;
+background-color: #0f1324 !important;
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="Preview"] {
+      width: 100%;
+`;
 
-  h1 {
-    margin: 0px;
-  }
+
+const Card = styled(Paper)`
+float: left;
+width: 50%;
+margin: 0px auto;
+padding: 1.5rem;
+text-align: center;
+background-color: #0f1324 !important;
+text-decoration: none;
+border: 1px solid #34e2e4;
+border-radius: 10px;
+transition: color 0.15s ease, border-color 0.15s ease;
+max-width: 300px;
+
+.card:hover,
+.card:focus,
+.card:active {
+  color: #000000;
+  border-color: #0070f3;
+}
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="Card"] {
+      width: 100%;
 `;
 
 const MintButtonContainer = styled.div`
@@ -142,9 +219,9 @@ const SolExplorerLink = styled.a`
 `;
 
 const MainContainer = styled.div`
-  display: flex;
+  display: absolute;
   flex-direction: column;
-  margin-top: 20px;
+  margin-top: 0px;
   margin-bottom: 20px;
   margin-right: 4%;
   margin-left: 4%;
@@ -154,7 +231,7 @@ const MainContainer = styled.div`
 
 const MintContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex: 1 1 auto;
   flex-wrap: wrap;
   gap: 20px;
@@ -168,25 +245,36 @@ const DesContainer = styled.div`
 `;
 
 const Price = styled(Chip)`
-  position: absolute;
+color: #34e2e4;
+text-decoration-color:  #34e2e4;
+position: absolute;
+top: 20px;
+right: 5px;
+font-size: 14px;
   margin: 5px;
   font-weight: bold;
   font-size: 1.2em !important;
-  font-family: 'Patrick Hand', cursive !important;
+  font-color: blue !important;
+  Background-color:  !important;
 `;
 
 const Image = styled.img`
-  height: 400px;
-  width: auto;
+  height: auto;
+  max-width: 100%;
   border-radius: 7px;
   box-shadow: 5px 5px 40px 5px rgba(0, 0, 0, 0.5);
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .Image {
+      width: 100%;  }
+    }
 `;
 
 const BorderLinearProgress = styled(LinearProgress)`
-  margin: 20px;
-  height: 10px !important;
-  border-radius: 30px;
-  border: 2px solid white;
+  margin: 10px;
+  height: 20px !important;
+  border-radius: 50px;
+  border: 1px solid white;
   box-shadow: 5px 5px 40px 5px rgba(0, 0, 0, 0.5);
   background-color: var(--main-text-color) !important;
 
@@ -195,11 +283,12 @@ const BorderLinearProgress = styled(LinearProgress)`
   }
 
   > div.MuiLinearProgress-bar1Determinate {
-    border-radius: 30px !important;
+    border-radius: 50px !important;
     background-image: linear-gradient(270deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.5));
   }
 `;
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 export interface HomeProps {
     candyMachineId?: anchor.web3.PublicKey;
     connection: anchor.web3.Connection;
@@ -449,7 +538,7 @@ const Home = (props: HomeProps) => {
         if (hours > 0) {
             label += hours + " hours "
         }
-        label += (minutes + 1) + " minutes left to MINT."
+        label += (minutes + 1) + " minutes left to mint"
         return (
             <div><h3>{label}</h3></div>
         );
@@ -483,6 +572,7 @@ const Home = (props: HomeProps) => {
             origin: {y: 0.6},
         });
     }
+
 
     const onMint = async (
         beforeTransactions: Transaction[] = [],
@@ -561,7 +651,7 @@ const Home = (props: HomeProps) => {
                 if (status && !status.err && metadataStatus) {
                     setAlertState({
                         open: true,
-                        message: 'Congratulations! Mint succeeded!',
+                        message: 'Congratulations! Minted!',
                         severity: 'success',
                     });
 
@@ -637,9 +727,14 @@ const Home = (props: HomeProps) => {
 
 
     return (
+        
         <main>
             <MainContainer>
-                <WalletContainer>
+
+                <WalletContainer>                   
+                <a href="https://nukepad.io"><div className="logo">
+                    <img src="logo.svg"  width="200" height="80"/>
+                </div></a>
                     <Wallet>
                         {wallet ?
                             <WalletAmount>{(balance || 0).toLocaleString()} SOL<ConnectButton/></WalletAmount> :
@@ -647,16 +742,50 @@ const Home = (props: HomeProps) => {
                     </Wallet>
                 </WalletContainer>
                 <br/>
+                <br/>
+  
+                <Preview>
+                <div className="giff"><Image
+                                src="sans titre.gif"
+                                alt="NFT To Mint"
+                                className="Preview"/>
+                                </div>
+                            <br/>
+                            <div className="title">
+                            <h2><b>Daisuki</b></h2>
+                            </div>
+                        
+                            <div className="socials">
+                           <a href="https://twitter.com/Daisuki_NFT"><img src="twitter.svg" width="30px" height="30px" /></a>&nbsp;
+                           <a href="https://discord.com/invite/tDemXye6Cq"><img src="discord.png" width="30px" height="30px"/></a>&nbsp;
+                           <a href="https://www.daisukiclub.xyz/"><img src="web.png" width="30px" height="30px" /></a>&nbsp;
+                            </div>
+
+                            <br/>
+                            </Preview>
                 <MintContainer>
                     <DesContainer>
                         <NFT elevation={3}>
-                            <h2>My NFT</h2>
-                            <br/>
-                            <div><Price
-                                label={isActive && whitelistEnabled && (whitelistTokenBalance > 0) ? (whitelistPrice + " " + priceLabel) : (price + " " + priceLabel)}/><Image
-                                src="cool-cats.gif"
-                                alt="NFT To Mint"/></div>
-                            <br/>
+<Mintphase>
+    <div className="box">
+       <div className="phase" ms-auto>
+        <img src="NUKE.png" width="50" height="50" />
+        <b>NUKE Phase</b>
+        {wallet && isActive &&  <div className="live">●
+        <b>Live</b> </div>}
+  <div className="nukesupply">
+   <h5> Supply: 150</h5>
+  </div>
+        </div> 
+        
+
+        <div className="price">
+        <Price
+                                label={isActive && whitelistEnabled && (whitelistTokenBalance > 0) ? (whitelistPrice + " " + priceLabel) : (price + " " + priceLabel)}/>
+
+        </div>
+    </div>
+</Mintphase>
                             {wallet && isActive && whitelistEnabled && (whitelistTokenBalance > 0) && isBurnToken &&
                               <h3>You own {whitelistTokenBalance} WL
                                 mint {whitelistTokenBalance > 1 ? "tokens" : "token"}.</h3>}
@@ -671,10 +800,15 @@ const Home = (props: HomeProps) => {
                                 }}
                                 renderer={renderEndDateCounter}
                               />}
-                            {wallet && isActive &&
-                              <h3>TOTAL MINTED : {itemsRedeemed} / {itemsAvailable}</h3>}
+                              <br />
+                           
+                                <br />
+
                             {wallet && isActive && <BorderLinearProgress variant="determinate"
                                                                          value={100 - (itemsRemaining * 100 / itemsAvailable)}/>}
+                                                                         
+                                                                         {wallet && isActive &&
+                              <h6>TOTAL MINTED : {itemsRedeemed} / {itemsAvailable}</h6>}
                             <br/>
                             <MintButtonContainer>
                                 {!isActive && !isEnded && candyMachine?.state.goLiveDate && (!isWLOnly || whitelistTokenBalance > 0) ? (
@@ -753,8 +887,13 @@ const Home = (props: HomeProps) => {
                     {alertState.message}
                 </Alert>
             </Snackbar>
+            <a href="https://nukepad.io"><div className="applynow">
+                Launch with us <img src="rocket.svg" height="18" width="18" /></div></a>
         </main>
     );
 };
+
+
+
 
 export default Home;

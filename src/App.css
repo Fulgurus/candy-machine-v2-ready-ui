@@ -1,27 +1,165 @@
 /* Customize your main colors in :root variables */
+* {
+  box-sizing: border-box;
+}
+
 :root {
-  --main-background-color: #343A50;
+  --main-background-color: #0f1324;
   --card-background-color: #804980;
   --countdown-background-color: #433765;
   --main-text-color:#F7F6F4;
-  --title-text-color:#3CBA8B;
+  --title-text-color:#34e2e4;
+  padding: 0 2rem;
 }
 
 body{
 /*  background-color:var(--main-background-color);*/
-  background: url("img/background.png");
+  background: #0f1324;
   background-size: cover;
-  font-family: 'Patrick Hand', cursive;
+  font-family: 'Work Sans', sans-serif;
   font-size: 1.1em;
+ 
 }
 
 h2, p{
   color: var(--main-text-color);
+  float: left;
 }
+
+body:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 
 h3{
 font-weight: normal;
 }
 
+h6{
+  justify-content:stretch;
+}
 
 
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="NFT"] {
+    width: 100%;  }
+  }
+
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .Preview {
+      width: 100%;  }
+    }
+
+
+ .socials{
+  margin-top: 1px;
+ }
+
+ @media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .socials {
+    size: 5px;
+  width: fit-content;  }
+  }
+ 
+ .apply{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 400px;
+  font-size: 20px;
+  transition: ease-out;
+ }
+
+ .apply:hover{
+  transition: ease-in;
+ }
+
+ .apply::before{
+  transition-delay: var(--title-text-color);
+ }
+
+ .phase{
+  
+    position:initial;
+    width:180px;
+    height:100px;
+    left:10px;
+    top:100px;
+  
+ }
+
+ .box{
+  position: relative;
+  min-width: 300px;
+  min-height: 100px;
+  justify-content: space-between;
+ }
+
+ @media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .box {
+    width: 100%;  }
+  }
+
+ .live{
+  float: right;
+  color: aquamarine;
+  text-decoration-color: aquamarine;
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+
+ }
+
+ .price{
+  color: #34e2e4;
+  text-decoration-color:  #34e2e4;
+  position: absolute;
+  top: 20px;
+  right: 5px;
+  font-size: 18px;
+ }
+
+
+.applynow {
+  position: fixed;
+  bottom: 0px;
+  right: 1px;
+  margin: 2px;
+box-shadow: #0f1324 2px;
+  background-color: #34e2e4;
+  color: black;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .applynow {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+ @media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .giff {
+    position: relative;
+    width: auto;
+  height: 400px;  }
+  }
+
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .logo {
+      width: 90px;
+    height: auto;  }
+    }
