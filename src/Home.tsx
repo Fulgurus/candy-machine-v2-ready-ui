@@ -746,8 +746,8 @@ const Home = (props: HomeProps) => {
   
                 <Preview>
                 <div className="giff"><Image
-                                src="sans titre.gif"
-                                alt="NFT To Mint"
+                                src="giffy.gif"
+                                alt="NFT"
                                 className="Preview"/>
                                 </div>
                             <br/>
