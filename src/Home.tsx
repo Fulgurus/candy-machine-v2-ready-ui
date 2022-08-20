@@ -797,7 +797,7 @@ const Home = (props: HomeProps) => {
                                                 <b>ENDED</b> </div>}
 
                                             <div className="counters">
-                                                <p>Minting: {itemsRedeemed} /3333</p> </div>
+                                                <p>SOLD!</p> </div>
                 
 
                                         </div>
@@ -820,7 +820,8 @@ const Home = (props: HomeProps) => {
                                                 <h5> </h5>
                                             </div>
                                         </div>
-
+                                        <div className="counters">
+                                                <p>Minting: {itemsRedeemed} /3333</p> </div>
 
                                         <div className="phaseprice">
 1 SOL
