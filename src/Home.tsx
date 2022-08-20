@@ -794,7 +794,7 @@ const Home = (props: HomeProps) => {
                                     <div className="box">
                                         <div className="phase" ms-auto>
                                             <img src="whitelist.svg" width="40" height="40" />
-                                            <b> Whitelist</b>
+                                            <b> Whitelist •5728</b>
                                             {wallet && isActive && isPresale &&  <div className="live">●
                                                 <b>Live</b> </div>}
                                                                                             {wallet && isEnded && isPresale &&  <div className="Ended">●
