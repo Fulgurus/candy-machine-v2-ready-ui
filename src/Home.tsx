@@ -778,7 +778,7 @@ const Home = (props: HomeProps) => {
                                                 {wallet && isActive && payWithSplToken && isEnded && <div className="live">●
                                                 <b>Not Live</b> </div>}
                                                 {wallet && <div className="counters">
-                                                <p>Minted: 1223/1330</p> </div>}
+                                                <p>SOLD!</p> </div>}
                                         </div>
 
                                         <div className="phaseprice">
