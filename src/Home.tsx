@@ -773,12 +773,10 @@ const Home = (props: HomeProps) => {
                                         <div className="phase" ms-auto>
                                             <img src="NUKE.png" width="50" height="50" />
                                             <b>NUKE Phase</b>
-                                            {wallet && isActive && payWithSplToken && <div className="live">●
-                                                <b>Live</b> </div>}
+                                            {wallet && isActive && payWithSplToken && <div className="live">
+                                                <b>ENDED</b> </div>}
                                                 {wallet && isActive && payWithSplToken && isEnded && <div className="live">●
                                                 <b>Not Live</b> </div>}
-                                                {wallet && isActive && itemsRedeemed>1650 && <div className="Ended">●
-                                                <b>Is Ended</b> </div>}
                                                 {wallet && <div className="counters">
                                                 <p>Minted: {itemsRedeemed - 317}/1330</p> </div>}
                                         </div>
@@ -795,16 +793,12 @@ const Home = (props: HomeProps) => {
                                         <div className="phase" ms-auto>
                                             <img src="whitelist.svg" width="40" height="40" />
                                             <b> Whitelist •5728</b>
-                                            {wallet && isActive && isPresale &&  <div className="live">●
+                                            {wallet && isActive &&  <div className="live">●
                                                 <b>Live</b> </div>}
                                                                                             {wallet && isEnded && isPresale &&  <div className="Ended">●
                                                 <b>Ended</b> </div>}
-                                                {wallet && isActive && whitelistEnabled && (whitelistTokenBalance > 0) && isBurnToken &&
-                                    <h6 className="yes">Whitelisted</h6>}
-                                                                                    {wallet && isActive && whitelistEnabled && (whitelistTokenBalance < 1) && isBurnToken &&
-                                    <h6 className="no">Not Whitelisted</h6>}
                                             {wallet && <div className="counters">
-                                                <p>Minted: 0/1883</p> </div>}
+                                                <p>Minted: {itemsRedeemed - 1533}/1883</p> </div>}
                 
 
                                         </div>
