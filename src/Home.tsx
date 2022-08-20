@@ -777,11 +777,10 @@ const Home = (props: HomeProps) => {
                                                 <b>Live</b> </div>}
                                                 {wallet && isActive && payWithSplToken && isEnded && <div className="live">●
                                                 <b>Not Live</b> </div>}
-                                                {wallet && isActive && itemsRedeemed>1650 && <div className="live">●
+                                                {wallet && isActive && itemsRedeemed>1650 && <div className="Ended">●
                                                 <b>Is Ended</b> </div>}
-                                            <div className="nukesupply">
-                                                <h5> Minted: {itemsRedeemed - 317}/1333</h5>
-                                            </div>
+                                                {wallet && <div className="counters">
+                                                <p>Minted: {itemsRedeemed - 317}/1883</p> </div>}
                                         </div>
 
                                         <div className="phaseprice">
@@ -804,9 +803,9 @@ const Home = (props: HomeProps) => {
                                     <h6 className="yes">Whitelisted</h6>}
                                                                                     {wallet && isActive && whitelistEnabled && (whitelistTokenBalance < 1) && isBurnToken &&
                                     <h6 className="no">Not Whitelisted</h6>}
-                                            <div className="nukesupply">
-                                                <h5> Minted: 0/1883</h5>
-                                            </div>
+                                            {wallet && <div className="counters">
+                                                <p>Minted: 0/1330</p> </div>}
+                
 
                                         </div>
 

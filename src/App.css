@@ -215,3 +215,19 @@ flex-basis: 40%;
 .dox img{
   width: 60px;
 }
+
+.Ended{
+  color: red;
+}
+
+.counters{
+  color: #34e2e4;
+  text-decoration-color: #34e2e4;
+  position: absolute;
+  top: 40px;
+  left: 5px;
+}
+
+.counters p{
+  color: #34e2e4;
+}
