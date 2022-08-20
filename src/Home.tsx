@@ -797,8 +797,8 @@ const Home = (props: HomeProps) => {
                                                 <b>Live</b> </div>}
                                                                                             {wallet && isEnded && isPresale &&  <div className="Ended">●
                                                 <b>Ended</b> </div>}
-                                            {wallet && <div className="counters">
-                                                <p>Minting: {itemsRedeemed} /3333</p> </div>}
+                                            <div className="counters">
+                                                <p>Minting: {itemsRedeemed} /3333</p> </div>
                 
 
                                         </div>
