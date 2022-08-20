@@ -798,7 +798,7 @@ const Home = (props: HomeProps) => {
                                                                                             {wallet && isEnded && isPresale &&  <div className="Ended">●
                                                 <b>Ended</b> </div>}
                                             {wallet && <div className="counters">
-                                                <p>Minted: {itemsRedeemed - 1540}/1883</p> </div>}
+                                                <p>Minting: {itemsRedeemed} /3333</p> </div>}
                 
 
                                         </div>
