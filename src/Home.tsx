@@ -741,7 +741,7 @@ const Home = (props: HomeProps) => {
                 </WalletContainer>
                 <div className="row">
                     <Preview>
-                        <div className="giff">                    <a href=""><div className="dox">
+                        <div className="giff">                    <a href="https://twitter.com/daisuki_nft/status/1557899521010589696?s=21&t=58It9ZzkEDGwb4FTTdQT-Q"><div className="dox">
                 <img src="dox.svg" alt="Doxxed"/>
                     </div></a><Image
                             src="giffy.gif"
@@ -757,7 +757,7 @@ const Home = (props: HomeProps) => {
 
                         <div className="socials">
                             <a href="https://twitter.com/Daisuki_NFT"><img src="twitter.svg" width="30px" height="30px" /></a>&nbsp;
-                            <a href="https://discord.com/invite/tDemXye6Cq"><img src="discord.png" width="30px" height="30px" /></a>&nbsp;
+                            <a href="https://discord.gg/PupWsYUV"><img src="discord.png" width="30px" height="30px" /></a>&nbsp;
                             <a href="https://www.daisukiclub.xyz/"><img src="web.png" width="30px" height="30px" /></a>&nbsp;
                         </div>
 
