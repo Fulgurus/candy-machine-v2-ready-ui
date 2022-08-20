@@ -773,7 +773,7 @@ const Home = (props: HomeProps) => {
                                         <div className="phase" ms-auto>
                                             <img src="NUKE.png" width="50" height="50" />
                                             <b>NUKE Phase</b>
-                                            {wallet && isActive && payWithSplToken && <div className="live">
+                                            {wallet && isActive && <div className="live">
                                                 <b>ENDED</b> </div>}
                                                 {wallet && isActive && payWithSplToken && isEnded && <div className="live">●
                                                 <b>Not Live</b> </div>}
