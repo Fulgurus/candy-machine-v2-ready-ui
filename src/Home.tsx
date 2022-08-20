@@ -44,7 +44,7 @@ const WalletContainer = styled.div`
   justify-content: space-between;
   padding-left: 1%;
   padding-right: 1%;
-  overflow: hidden;
+  overflow: visible;
   box-sizing: border-box;
   position: sticky;
 `;
@@ -82,21 +82,16 @@ const Wallet = styled.ul`
   flex: 0 0 auto;
   margin: 0;
   padding: 0;
-  display: inline-block;
-  margin-right: 30px;
-flex-basis:40%;
+  margin-top: 5px;
 `;
 
 const ConnectButton = styled(WalletMultiButton)`
   border-radius: 4px !important;
   border: 2px
   padding: 6px 16px;
-  margin: 0 auto;
   color: white;
-  width: auto;
   background-color: #0f1324 !important;
   padding: 5px 16px 5px 16px;
-  position: relative;
   min-width: 48px;
   min-height: auto;
   border-radius: 22px;
@@ -108,14 +103,17 @@ const ConnectButton = styled(WalletMultiButton)`
   text-transform: uppercase;
   border: 1px solid;
   border-color: #34e2e4;
-  margin: 0;
-  display: flex;
   outline: 2px solid transparent;
   align-items: center;
   user-select: none;
   vertical-align: middle;
   justify-content: flex-start;
   gap: 10px;
+  overflow: hidden;
+
+  :hover {
+    background-color: #34e2e4 !important ;
+  }
 `;
 
 
