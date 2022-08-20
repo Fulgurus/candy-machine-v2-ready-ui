@@ -118,20 +118,12 @@ h6{
 
  }
 
- .price{
-  color: #34e2e4;
-  text-decoration-color:  #34e2e4;
-  position: absolute;
-  top: 20px;
-  right: 5px;
-  font-size: 18px;
- }
 
 
 .applynow {
   position: fixed;
   bottom: 0px;
-  right: 1px;
+  right: 0px;
   margin: 2px;
 box-shadow: #0f1324 2px;
   background-color: #34e2e4;
@@ -149,17 +141,77 @@ box-shadow: #0f1324 2px;
   }
 }
 
- @media only screen and (max-width: 768px) {
-  /* For mobile phones: */
-  .giff {
-    position: relative;
-    width: auto;
-  height: 400px;  }
-  }
+.ended{
+  float: right;
+  color: red;
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
 
-  @media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    .logo {
-      width: 90px;
-    height: auto;  }
+ }
+
+
+    .logo{
+      width: 100%;
+      display: flex;
+      margin: 10px 0;
+      align-items: center;
     }
+
+.row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px 0;
+
+}
+
+
+.giff{
+  width: 100%;
+}
+
+.phaseprice{
+  color:white;
+position: absolute;
+top: 30px;
+right: 5px;
+font-size: 8px;
+border-radius: 5px;
+  margin: 6px;
+  font-weight: bold;
+  padding-left: 4px;
+  padding-right: 4px;
+  border: 1px solid #34e2e4 !important;
+  font-size: 1.2em !important;
+  background-color: #0f1324 !important;
+}
+
+.no{
+  color: red;
+}
+
+.yes{
+  color: greenyellow;
+}
+
+@media screen and (max-width: 600px) {
+  .logo {
+position: relative;
+flex-basis: 40%;
+    text-align: center;
+  }
+}
+
+.dox{
+  width: 60px;
+  cursor: pointer;
+  position: absolute;
+  top: -5px;
+  left: -14px;
+}
+
+.dox img{
+  width: 60px;
+}
