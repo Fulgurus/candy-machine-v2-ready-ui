@@ -815,7 +815,7 @@ const Home = (props: HomeProps) => {
                                             <img src="public.svg" width="40" height="40" />
                                             <b>Public Phase</b>
                                             {wallet && isActive && <div className="live">
-                                                <b>ENDED</b> </div>}
+                                                <b>SOLD OUT!</b> </div>}
                                             <div className="nukesupply">
                                                 <h5> </h5>
                                             </div>
