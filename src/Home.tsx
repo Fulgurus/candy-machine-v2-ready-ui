@@ -814,14 +814,14 @@ const Home = (props: HomeProps) => {
                                         <div className="phase" ms-auto>
                                             <img src="public.svg" width="40" height="40" />
                                             <b>Public Phase</b>
-                                            {wallet && isActive && <div className="live">●
-                                                <b>Live</b> </div>}
+                                            {wallet && isActive && <div className="live">
+                                                <b>ENDED</b> </div>}
                                             <div className="nukesupply">
                                                 <h5> </h5>
                                             </div>
                                         </div>
                                         <div className="counters">
-                                                <p>Minting: {itemsRedeemed} /3333</p> </div>
+                                                <p>SOLD!</p> </div>
 
                                         <div className="phaseprice">
 1 SOL
