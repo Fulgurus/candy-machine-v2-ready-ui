@@ -876,11 +876,15 @@ const Home = (props: HomeProps) => {
                             <div className="phases">
                             
                                 <p>
-                                    <b>NUKE Phase</b> 3rd September at 2:30 PM UTC
+                                    <b>NUKE Phase</b> 3rd September at 2:30 PM UTC (1111)
                                 </p>
                                
                                 <p>
-                                    <b>Public Phase</b> 3rd September at 3:30 PM UTC
+                                    <b>Public Phase 1</b> 3rd September at 3:30 PM UTC (2222)
+                                </p>
+
+                                <p>
+                                    <b>Public Phase 2</b> To Be Announced (6666)
                                 </p>
                         
                             </div>
