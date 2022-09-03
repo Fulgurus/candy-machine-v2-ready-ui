@@ -38,6 +38,7 @@ const splTokenName = process.env.REACT_APP_SPL_TOKEN_TO_MINT_NAME ? process.env.
 const WalletContainer = styled.div`
   display: flex;
   width: full;
+  z-index: 2 !important;
   width: 100%;
   flex-direction: row;
   flex-wrap: wrap;
@@ -58,15 +59,14 @@ const WalletAmount = styled.div`
   position: relative;
   min-width: 48px;
   min-height: auto;
-  border-radius: 22px;
-  box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%);
+  border-radius: 50px;
   box-sizing: border-box;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   font-weight: 500;
   line-height: 1.75;
   text-transform: uppercase;
-  border: 1px;
-  border-color: #f07733;
+  border: 2px;
+  border-color: white;
   margin: 0;
   display: inline-flex;
   outline: 2px solid transparent;
@@ -86,33 +86,29 @@ const Wallet = styled.ul`
 `;
 
 const ConnectButton = styled(WalletMultiButton)`
-  border-radius: 4px !important;
-  border: 2px
   padding: 6px 16px;
-  color: white;
-  background-color: #0f1324 !important;
+  color: #1e232f !important;
   padding: 5px 16px 5px 16px;
-  min-width: 48px;
-  min-height: auto;
-  border-radius: 22px;
-  box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%);
+  min-width: 100%;
+  z-index: 2 !important;
+  min-height: 100%;
   box-sizing: border-box;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   font-weight: 500;
+  font-family: 'Poppins', sans-serif!important;
   line-height: 1.75;
   text-transform: uppercase;
-  border: 1px solid;
-  border-color: #34e2e4;
-  outline: 2px solid transparent;
-  align-items: center;
+  align-items: stretch;
   user-select: none;
   vertical-align: middle;
   justify-content: flex-start;
   gap: 10px;
   overflow: hidden;
+  background: white !important;
+  border-radius: 5% !important;
 
   :hover {
-    background-color: #34e2e4 !important ;
+    background-color: #a6a49e !important ;
+    color: white !important;
   }
 `;
 
@@ -120,13 +116,11 @@ const ConnectButton = styled(WalletMultiButton)`
 const Mintphase = styled(Paper)`
 
 width: 100%;
+z-index: 1;
+min-width: 300px;
 position: relative;
 margin: 0 auto;
-border: 1px solid #34e2e4;
-padding: 5px 5px 5px 5px;
-flex: 1 4 auto;
-background-color: #23273B !important;
-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22) !important;
+background: rgba(0,0,0,0) !important;
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
     [class*="Mintphase"] {
@@ -136,10 +130,10 @@ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22) !im
 const NFT = styled(Paper)`
   min-width: 100%;
   margin: 0 auto;
-  padding: 20px 20px 20px 20px;
+  z-index: 1;
+  background: rgba(0,0,0,0) !important;
+  padding: 5px 5px 5px 5px;
   flex: 1 1 auto;
-  background-color: #23273B !important;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22) !important;
   @media only screen and (max-width: 768px) {
     /* For mobile phones: */
     [class*="NFT"] {
@@ -147,22 +141,20 @@ const NFT = styled(Paper)`
 `;
 
 const Preview = styled(Paper)`
-flex-basis: 45%;
+flex-basis: 60%;
 position: relative;
 margin: 0 auto;
-padding: 5px;
-text-align: center;
-color: inherit;
-background-color: #0f1324 !important;
+background: rgba(0,0,0,0)!important;
 `;
 
 
 const Card = styled(Paper)`
 margin: 0px auto;
-background-color: #0f1324 !important;
+background: rgba(0,0,0,0)!important;
 text-decoration: none;
-border: 1px solid #34e2e4;
-border-radius: 10px;
+border: 3px solid white;
+border-radius: 5% !important;
+color: white !important;
 transition: color 0.15s ease, border-color 0.15s ease;
 min-width: 150px;
 
@@ -170,7 +162,7 @@ min-width: 150px;
 .card:focus,
 .card:active {
   color: #000000;
-  border-color: #0070f3;
+  border-color: #d9b086;
 }
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
@@ -180,27 +172,25 @@ min-width: 150px;
 
 const MintButtonContainer = styled.div`
   button.MuiButton-contained:not(.MuiButton-containedPrimary).Mui-disabled {
-    color: #464646;
+    color: black !important;
+    width: 400px;
+    font-size: 1em;
   }
 
   button.MuiButton-contained:not(.MuiButton-containedPrimary):hover,
-  button.MuiButton-contained:not(.MuiButton-containedPrimary):focus {
-    -webkit-animation: pulse 1s;
-    animation: pulse 1s;
-    box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+  button.MuiButton-contained:not(.MuiButton-containedPrimary):active {
+    background-color: #00D565 !important;
+    font-size: 40px;
+    color: white !important;
+
+    :active {
+        background-color: #00D565 !important;
+        transform: translate(9px, 4px)!important;
+    color: white !important;
+    font-size: 40px;
+  }
   }
 
-  @-webkit-keyframes pulse {
-    0% {
-      box-shadow: 0 0 0 0 #ef8f6e;
-    }
-  }
-
-  @keyframes pulse {
-    0% {
-      box-shadow: 0 0 0 0 #ef8f6e;
-    }
-  }
 `;
 
 const SolExplorerLink = styled.a`
@@ -216,6 +206,7 @@ const SolExplorerLink = styled.a`
 
   :hover {
     border-bottom: 2px solid var(--title-text-color);
+    color: white;
   }
 `;
 
@@ -232,37 +223,42 @@ const MainContainer = styled.div`
 
 const MintContainer = styled.div`
   display: flex;
-  flex-basis: 50%;
+  flex-basis: 40%;
   position: relative;
   align-items: center;
-  padding: 5px;
-  justify-content: center;
+  justify-content: stretch;
+  background: rgba(0,0,0,0)!important;
 `;
 
 const DesContainer = styled.div`
   display: flex;
+  position: relative;
   flex-direction: column;
   flex: 1 1 auto;
-  gap: 10px;
+  gap: 20px;
+  background: rgba(0,0,0,0)!important;
 `;
 
 const Price = styled(Chip)`
-color: #34e2e4;
+color: white !important;
 text-decoration-color:  #34e2e4;
-position: relative;
-font-size: 14px;
+position: absolute;
+left: 0px;
+margin-top: 10px;
+font-size: 40px !important;
   font-weight: bold;
-  border-size: 2px solid #34e2e4 !important;
-  font-size: 1em !important;
-  background-color: #23273B  !important;
+  font-size: 1.4em !important;
+  background-color: rgba(0,0,0,0) !important;
+  font-family: 'Poppins', sans-serif !important;
 `;
 
 const Image = styled.img`
   height: auto;
-  min-width: 300px;
+  min-width: 100%;
   max-width: 100%;
-  border-radius: 7px;
-  box-shadow: 5px 5px 40px 5px rgba(0, 0, 0, 0.5);
+  position: relative;
+  left: -58px;
+  background: rgba(0,0,0,0)!important;
   @media only screen and (max-width: 768px) {
     /* For mobile phones: */
     .Image {
@@ -271,20 +267,16 @@ const Image = styled.img`
 `;
 
 const BorderLinearProgress = styled(LinearProgress)`
-  margin: 10px;
-  height: 20px !important;
-  border-radius: 5px;
-  border: 1px solid white;
-  box-shadow: 5px 5px 40px 5px rgba(0, 0, 0, 0.5);
-  background-color: #0f1324 !important;
+  min-width: 400px;
+  height: 5px !important;
+  background-color: rgba(255,255,255, 0.3) !important;
 
   > div.MuiLinearProgress-barColorPrimary {
-    background-color: var(--title-text-color) !important;
+    background-color: #34e2e4  !important;
   }
 
   > div.MuiLinearProgress-bar1Determinate {
-    border-radius: 5px !important;
-    background-image: linear-gradient(270deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.5));
+    background: #34e2e4 !important;
   }
 `;
 
@@ -524,7 +516,7 @@ const Home = (props: HomeProps) => {
 
     const renderGoLiveDateCounter = ({ days, hours, minutes, seconds }: any) => {
         return (
-            <div><Card>Starts in {days}:{hours}:{minutes}:{seconds}</Card></div>
+            <div><Card>You can mint in {days}:{hours}:{minutes}:{seconds}</Card></div>
         );
     };
 
@@ -732,126 +724,92 @@ const Home = (props: HomeProps) => {
                     <a href="https://nukepad.io">
                         <img src="logo.svg" width="200" height="80" className="logo" />
                     </a>
-
                     <Wallet>
                         {wallet ?
                             <WalletAmount>{(balance || 0).toLocaleString()} SOL<ConnectButton /></WalletAmount> :
-                            <ConnectButton>Connect Wallet</ConnectButton>}
+                            <ConnectButton>Select Wallet</ConnectButton>}
                     </Wallet>
                 </WalletContainer>
                 <div className="row">
-                    <Preview>
-                        <div className="giff">                    <a href="https://twitter.com/daisuki_nft/status/1557899521010589696?s=21&t=58It9ZzkEDGwb4FTTdQT-Q"><div className="dox">
-                <img src="dox.svg" alt="Doxxed"/>
-                    </div></a><Image
-                            src="giffy.gif"
-                            alt="NFT" />
+                    <Preview elevation={0}>
+                        <div className="giff">
+                            <Image
+                                src="show.gif"
+                                alt="NFT" />
                         </div>
-                        <br />
-                        <div className="title">
-                            <h2><b>Daisuki</b></h2>
-                        </div>
-
-
-                     
-
-                        <div className="socials">
-                            <a href="https://twitter.com/Daisuki_NFT"><img src="twitter.svg" width="30px" height="30px" /></a>&nbsp;
-                            <a href="https://discord.gg/PupWsYUV"><img src="discord.png" width="30px" height="30px" /></a>&nbsp;
-                            <a href="https://www.daisukiclub.xyz/"><img src="web.png" width="30px" height="30px" /></a>&nbsp;
-                        </div>
-
-                        <br />
                     </Preview>
 
 
                     <MintContainer>
                         <DesContainer>
+                        <div className="title">
+                                    <h1>
+                                        <b>Invisible Punkverse</b>
+                                    </h1>
+                                </div>
+                                <div className="description">
+                                    <p>
+                                        By <a href="https://twitter.com/invisipunkverse"><b>Invisible Punkverse</b></a>
+                                    </p>
+                                </div>
+                                <div className="description">
+                                    <p>
+                                    10,000 punks just turned invisible ! The first project to bring a Multiverse of Metaverse. Read more at <a href="https://invisiblepunkverse.xyz/">https://invisiblepunkverse.xyz/</a>
+                                    </p>
+                                </div>
                             <NFT elevation={3}>
-                                <Mintphase>
+                               {isActive && payWithSplToken && <Mintphase>
+
                                     <div className="box">
-                                        <div className="phase" ms-auto>
-                                            <img src="NUKE.png" width="50" height="50" />
-                                            <b>NUKE Phase</b>
-                                            {wallet && isActive && <div className="live">
-                                                <b>ENDED</b> </div>}
-                                                {wallet && isActive && payWithSplToken && isEnded && <div className="live">●
-                                                <b>Not Live</b> </div>}
-                                                {wallet && <div className="counters">
-                                                <p>SOLD!</p> </div>}
-                                        </div>
-
-                                        <div className="phaseprice">
-10 NUKE
-
-                                        </div>
-                                    </div>
-
-                                </Mintphase> <br />
-                                <Mintphase>
-                                    <div className="box">
-                                        <div className="phase" ms-auto>
-                                            <img src="whitelist.svg" width="40" height="40" />
-                                            <b> Whitelist •5728</b>
-                                            {wallet && isActive &&  <div className="live">
-                                                <b>ENDED</b> </div>}
-
-                                            <div className="counters">
-                                                <p>SOLD!</p> </div>
-                
-
-                                        </div>
-
-                                        <div className="phaseprice">
-1 SOL
-
-                                        </div>
-                                    </div>
-
-                                </Mintphase> <br />
-                                <Mintphase>
-                                    <div className="box">
-                                        <div className="phase" ms-auto>
-                                            <img src="public.svg" width="40" height="40" />
-                                            <b>Public Phase</b>
-                                            {wallet && isActive && <div className="live">
-                                                <b>SOLD OUT!</b> </div>}
-                                            <div className="nukesupply">
-                                                <h5> </h5>
+                                        <div className="phasename">
+                                            <p>
+                                          <b>NUKE PHASE </b>  
+                                            </p>
                                             </div>
+                                            <div className="pricenoww">
+                                            <Price
+                                            label={whitelistEnabled && (whitelistTokenBalance > 0) ? (whitelistPrice + " " + priceLabel) : (price + " " + priceLabel)} />
                                         </div>
-                                        <div className="counters">
-                                                <p>SOLD!</p> </div>
+                                        {isActive && <div className="live">
+                                            <b>LIVE</b> </div>}
+                                        {isEnded && <div className="live">
+                                            <b>ENDED</b> </div>}
+                                        <div className="counters" ms-auto>
+                                            <p>Available: {itemsRemaining}/{itemsAvailable}</p> </div>
 
-                                        <div className="phaseprice">
-1 SOL
 
-                                        </div>
                                     </div>
 
-                                </Mintphase>
-                  
-                                {wallet && isActive && endDate && Date.now() < endDate.getTime() &&
-                                    <Countdown
-                                        date={toDate(candyMachine?.state?.endSettings?.number)}
-                                        onMount={({ completed }) => completed && setIsEnded(true)}
-                                        onComplete={() => {
-                                            setIsEnded(true);
-                                        }}
-                                        renderer={renderEndDateCounter}
-                                    />}
-                              
-                                <br />
+                                </Mintphase>}
+                                {isActive && <Mintphase>
 
-                                <br />
+<div className="box">
+    <div className="phasename">
+        <p>
+      <b>PUBLIC</b>  
+        </p>
+        </div>
+        <div className="pricenoww">
+        <Price
+        label={whitelistEnabled && (whitelistTokenBalance > 0) ? (whitelistPrice + " " + priceLabel) : (price + " " + priceLabel)} />
+    </div>
+    {isActive && <div className="live">
+        <b>LIVE</b> </div>}
+    {isEnded && <div className="live">
+        <b>ENDED</b> </div>}
 
-                                {wallet && isActive && <BorderLinearProgress variant="determinate"
-                                    value={100 - (itemsRemaining * 100 / itemsAvailable)} />}
 
-                                {wallet && isActive &&
-                                    <h6>TOTAL MINTED : {itemsRedeemed} / {itemsAvailable}</h6>} <br />                                      <div className="pricenow">  Current Price:                                      <Price
-                                    label={isActive && whitelistEnabled && (whitelistTokenBalance > 0) ? (whitelistPrice + " " + priceLabel) : (price + " " + priceLabel)} />
 </div>
+
+</Mintphase>}
+
+                                <BorderLinearProgress variant="determinate"
+                                    value={100 - (100 - (itemsRedeemed * 100 / itemsAvailable))} />
+<div className="totalcounter">
+    <span> <h6>TOTAL MINTED</h6> </span>
+    <span><h6>{itemsRedeemed} / {itemsAvailable}</h6></span>
+</div>
+                               
                                 <br />
                                 <MintButtonContainer>
                                     {!isActive && !isEnded && candyMachine?.state.goLiveDate && (!isWLOnly || whitelistTokenBalance > 0) ? (
@@ -915,12 +873,28 @@ const Home = (props: HomeProps) => {
                                     <SolExplorerLink href={solanaExplorerLink} target="_blank">View on
                                         Solscan</SolExplorerLink>}
                             </NFT>
+                            <div className="phases">
+                            
+                                <p>
+                                    <b>NUKE Phase</b> 3rd September at 2:30 PM UTC
+                                </p>
+                               
+                                <p>
+                                    <b>Public Phase</b> 3rd September at 3:30 PM UTC
+                                </p>
+                        
+                            </div>
+                            <div className="socials">
+                                <a href="https://twitter.com/invisipunkverse"><img src="twitter.svg" width="30px" height="30px" /></a>&nbsp;&nbsp;&nbsp;
+                                <a href="https://discord.gg/8Fbdzt6cbN"><img src="discord.svg" width="30px" height="30px" /></a>
+                            </div>
                         </DesContainer>
                     </MintContainer>
                 </div>
 
 
             </MainContainer>
+
             <Snackbar
                 open={alertState.open}
                 autoHideDuration={6000}
@@ -933,8 +907,6 @@ const Home = (props: HomeProps) => {
                     {alertState.message}
                 </Alert>
             </Snackbar>
-            <a href="https://nukepad.io"><div className="applynow">
-                Launch with us <img src="rocket.svg" height="18" width="18" /></div></a>
         </main>
     );
 };

@@ -9,10 +9,17 @@ import {CandyMachineAccount} from './candy-machine';
 export const CTAButton = styled(Button)`
   display: block !important;
   margin: 0 auto !important;
-  background-color: var(--title-text-color) !important;
-  min-width: 120px !important;
+  background: #34e2e4 !important;
+;
+  min-width: 400px !important;
   font-size: 1em !important;
-  font-weight: bold;
+  font-weight: bold !important;
+  font-family: 'Poppins', sans-serif !important;
+  color: black !important;
+  font-size: 24px !important;
+  :active
+  transform: translate(4px, 9px)!important;
+  box-shadow: none !important;
 `;
 
 export const MintButton = ({

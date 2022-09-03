@@ -1,24 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 /* Customize your main colors in :root variables */
 * {
   box-sizing: border-box;
 }
 
 :root {
-  --main-background-color: #0f1324;
-  --card-background-color: #804980;
-  --countdown-background-color: #433765;
-  --main-text-color:#F7F6F4;
-  --title-text-color:#34e2e4;
+  --main-background-color: #1E232F;
+  --card-background-color: #1E232F;
+  --countdown-background-color: #1E232F;
+  --main-text-color:#ffffff;
+  --title-text-color:#ffffff;
   padding: 0 2rem;
 }
 
 body{
 /*  background-color:var(--main-background-color);*/
-  background: #0f1324;
+background: #1E232F;
   background-size: cover;
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1.1em;
- 
+  z-index: 1 !important;
 }
 
 h2, p{
@@ -39,13 +41,14 @@ font-weight: normal;
 
 h6{
   justify-content:stretch;
+  color: white !important;
 }
 
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1000px) {
   /* For mobile phones: */
-  [class*="NFT"] {
+  .NFT {
     width: 100%;  }
   }
 
@@ -56,9 +59,6 @@ h6{
     }
 
 
- .socials{
-  margin-top: 1px;
- }
 
  @media only screen and (max-width: 768px) {
   /* For mobile phones: */
@@ -69,8 +69,8 @@ h6{
  
  .apply{
   position: fixed;
-  bottom: 0;
-  right: 0;
+  bottom: 10px;
+  right: 5px;
   width: 400px;
   font-size: 20px;
   transition: ease-out;
@@ -80,24 +80,45 @@ h6{
   transition: ease-in;
  }
 
- .apply::before{
-  transition-delay: var(--title-text-color);
+
+ .pricenow {
+  color: white !important;
+text-decoration-color:  #34e2e4;
+position: absolute;
+top: 80px;
+right: 20px;
+font-size: 30px !important;
+  font-weight: bold;
+  border-size: 2px solid #34e2e4 !important;
+  font-size: 1.2em !important;
+  background-color: rgba(0,0,0,0) !important;
+  font-family: Arial !important;
  }
 
- .phase{
+
+ .phasename{
   
     position:initial;
-    width:180px;
-    height:100px;
-    left:10px;
-    top:100px;
+    width: 120px;
+    height: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #34e2e4;
+
+    font-size: 15px;
   
+ }
+
+ .phasename p{
+position: absolute;
+margin-left: 10px;
+margin-right: 10px;
+color: black;
  }
 
  .box{
   position: relative;
-  min-width: 300px;
-  min-height: 100px;
+  min-width: 100%;
+  min-height: 120px;
   justify-content: space-between;
  }
 
@@ -109,11 +130,11 @@ h6{
 
  .live{
   float: right;
-  color: aquamarine;
-  text-decoration-color: aquamarine;
+  color: white;
+  text-decoration-color: white;
   position: absolute;
-  top: 8px;
-  right: 16px;
+  top: 10px;
+  right: 30px;
   font-size: 18px;
 
  }
@@ -121,23 +142,30 @@ h6{
 
 
 .applynow {
-  position: fixed;
-  bottom: 0px;
-  right: 0px;
+  position: absolute;
+  bottom:-200px !important;
+  left: 40px;
   margin: 2px;
-box-shadow: #0f1324 2px;
-  background-color: #34e2e4;
-  color: black;
-  padding-left: 5px;
-  padding-right: 5px;
+  background: #1E232F !important;
+  border: 3px solid white;
+  border-radius: 5% !important;
+  box-shadow: 10px 5px rgba(0,0,0,0.2) !important;
+  color: white !important;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 30px;
+}
+
+.applynow:hover {
+
+  background-color: rgba(237, 237, 237, 0.921) !important;
+  color: #1E232F !important;
 }
 
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 999px) {
   .applynow {
-    width: 100%;
-    justify-content: center;
-    text-align: center;
+display: none;
   }
 }
 
@@ -161,15 +189,15 @@ box-shadow: #0f1324 2px;
 
 .row{
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 50px 0;
-
+  justify-content:flex-start;
+  align-items: stretch;
+  background: rgba(0, 0, 0, .0) !important;
+  z-index: 1 !important;
 }
 
 
 .giff{
-  width: 100%;
+  min-width: 100%;
 }
 
 .phaseprice{
@@ -204,30 +232,347 @@ flex-basis: 40%;
   }
 }
 
-.dox{
-  width: 60px;
-  cursor: pointer;
-  position: absolute;
-  top: -5px;
-  left: -14px;
-}
-
-.dox img{
-  width: 60px;
-}
-
-.Ended{
-  color: red;
-}
 
 .counters{
-  color: #34e2e4;
-  text-decoration-color: #34e2e4;
+  color: #ffffff;
+font-size: 20px;
   position: absolute;
-  top: 40px;
-  left: 5px;
+  top: 75px;
+  left: 20px;
 }
 
 .counters p{
-  color: #34e2e4;
+  color: white;
+}
+
+@font-face {
+  font-family: bubble;
+  src: url(bubble.otf);
+}
+
+.socials{
+  margin-top: 5px;
+  position: relative;
+  align-items: center;
+  align-content: center;
+}
+
+.title {
+  position: relative;
+  justify-content: left;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.title img{
+  cursor: pointer;
+  width: 30px;
+}
+
+.title p{
+  text-decoration: none;
+}
+
+.title a{
+  text-decoration: none;
+  color: white;
+}
+
+
+.description {
+  position: relative;
+  justify-content: left;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.description img{
+  cursor: pointer;
+  width: 30px;
+}
+
+.description p{
+  text-decoration: none;
+}
+
+.description a{
+  text-decoration: none;
+  color: white;
+}
+
+.totalcounter{
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.wallet-adapter-button {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 5%;
+  color: #1E232F;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 3px solid white;
+  font-family: bubble;
+  font-size: 16px;
+  font-weight: 600;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 20px;
+}
+
+.wallet-adapter-button-trigger {
+  background-color: #4e44ce;
+}
+
+.wallet-adapter-button:not([disabled]):focus-visible {
+  outline-color: white;
+}
+
+.wallet-adapter-button:not([disabled]):hover {
+  background-color: white;
+  color: #1E232F;
+}
+
+.wallet-adapter-button[disabled] {
+  background: white;
+  color: #1E232F;
+  cursor: not-allowed;
+}
+
+.wallet-adapter-button-end-icon,
+.wallet-adapter-button-start-icon,
+.wallet-adapter-button-end-icon img,
+.wallet-adapter-button-start-icon img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.wallet-adapter-button-end-icon {
+  margin-left: 8px;
+}
+
+.wallet-adapter-button-start-icon {
+  margin-right: 8px;
+}
+
+.wallet-adapter-collapse {
+  width: 100%;
+}
+
+.wallet-adapter-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.wallet-adapter-dropdown-list {
+  position: absolute;
+  z-index: 99;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-row-gap: 10px;
+  padding: 10px;
+  top: 100%;
+  right: 0;
+  margin: 0;
+  border: 3px solid white;
+  list-style: none;
+  background: #1E232F;
+  border-radius: 5%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 200ms ease, transform 200ms ease, visibility 200ms;
+}
+
+.wallet-adapter-dropdown-list-active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(10px);
+  z-index: 2;
+}
+
+.wallet-adapter-dropdown-list-item {
+  background: #1E232F;
+  display: block;
+  position: relative;
+  z-index: 2;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid white;
+  outline: none;
+  cursor: pointer;
+  white-space: nowrap;
+  box-sizing: border-box;
+  padding: 0 20px;
+  width: 100%;
+  border-radius: 5%;
+  font-size: 14px;
+  font-weight: 600;
+  height: 37px;
+  color: white;
+}
+
+.wallet-adapter-dropdown-list-item:not([disabled]):hover {
+  background-color: #ffffff;
+  color: #1E232F;
+  z-index: 2;
+}
+
+.wallet-adapter-modal-collapse-button svg {
+  align-self: center;
+  fill: #1E232F;
+}
+
+.wallet-adapter-modal-collapse-button.wallet-adapter-modal-collapse-button-active svg {
+  transform: rotate(180deg);
+  transition: transform ease-in 150ms;
+}
+
+.wallet-adapter-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity linear 150ms;
+  background: #1E232F;
+  opacity: 0.1;
+  z-index: 1040;
+  overflow-y: auto;
+}
+
+.wallet-adapter-modal.wallet-adapter-modal-fade-in {
+  opacity: 1;
+}
+
+.wallet-adapter-modal-button-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  border-radius: 5%;
+}
+
+.wallet-adapter-modal-button-close:focus-visible {
+  outline-color: #404144;
+}
+
+.wallet-adapter-modal-button-close svg {
+  fill: #fdfdfd;
+  transition: fill 200ms ease 0s;
+}
+
+.wallet-adapter-modal-button-close:hover svg {
+  fill: #404144;
+}
+
+.wallet-adapter-modal-logo {
+  max-width: 100%;
+}
+
+.wallet-adapter-modal-logo-wrapper {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90px;
+  width: 90px;
+  border-radius: 5%;
+  background: white;
+  margin-bottom: 10px;
+  padding: 12px;
+}
+
+.wallet-adapter-modal-overlay {
+  background: #1E232F;
+  opacity: 0.3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.wallet-adapter-modal-container {
+  display: flex;
+  margin: 3rem;
+  min-height: calc(100vh - 6rem); /* 100vh - 2 * margin */
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 480px) {
+  .wallet-adapter-modal-container {
+      margin: 1rem;
+      min-height: calc(100vh - 2rem); /* 100vh - 2 * margin */
+  }
+}
+
+.wallet-adapter-modal-wrapper {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1050;
+  max-width: 400px;
+  border: 3px solid white;
+  border-radius: 5%;
+  background: #1E232F;
+  box-shadow: 10px 5px rgba(0,0,0,0.2);
+  font-family: bubble;
+  font-weight: 600;
+  padding: 40px 20px 20px;
+  flex: 1;
+}
+
+.wallet-adapter-modal-wrapper .wallet-adapter-button {
+  width: 100%;
+}
+
+.wallet-adapter-modal-wrapper-no-logo {
+  padding-top: 30px;
+}
+
+.wallet-adapter-modal-title {
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 41px;
+  margin-bottom: 27px;
+  margin-top: 0;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-family: bubble;
+}
+
+@media (max-width: 374px) {
+  .wallet-adapter-modal-title {
+      font-size: 26px;
+  }
+}
+
+.wallet-adapter-modal-list {
+  margin: 0 0 12px;
+  padding: 0;
+  width: 100%;
+  list-style: none;
+  font-family: bubble !important; 
+}
+
+.wallet-adapter-modal-list li:not(:first-of-type) {
+  margin-top: 12px;
 }

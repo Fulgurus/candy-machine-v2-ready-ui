@@ -2,7 +2,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #0f1324;
+  background-color: #F8ECC6;
   color: #FFFFFF;
     padding: 0;
     margin: 0;
@@ -12,7 +12,7 @@ body {
 }
 
 code {
-  background: #fafafa;
+  background: #F8ECC6;
   border-radius: 5px;
   padding: 0.75rem;
   font-size: 1.1rem;
