@@ -781,7 +781,7 @@ const Home = (props: HomeProps) => {
                                     </div>
 
                                 </Mintphase>}
-                                {isActive && <Mintphase>
+                                {isActive && isWLOnly && <Mintphase>
 
 <div className="box">
     <div className="phasename">
