@@ -36,7 +36,7 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider react-native start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
