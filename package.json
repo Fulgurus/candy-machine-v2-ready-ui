@@ -36,7 +36,7 @@
     "web-vitals": "^1.0.1"
   },
   "engines": {
-    "node": "18.12.1"
+    "node": "18"
   },
   "scripts": {
     "start": "react-scripts start",
